@@ -7,7 +7,7 @@ h2{
 text-align:center;
 margin-bottom: 5%;
 font-weight: bold;
-font-size: 5rem;
+font-size: 2rem;
 }
 #male,#female,{
     height: 2rem;
@@ -15,7 +15,7 @@ font-size: 5rem;
 }
 #comments{width: 100%;}
 label,input,textarea{
-font-size: 3rem;
+font-size: 1rem;
 font-weight: bold;
 }
 #login{
