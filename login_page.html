@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="baristasathome" content="coffee">
+<meta name="author" content="moises romero">
+<meta name="keywords" content="coffee, extractions, coffee pots">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/loginpage_style.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>MOISES_ROMERO</title>
+</head>
+    <body>         
+     <header id="up"> 
+            <div>
+             <img id="logo" src="images/BARISTA5.png" alt="baristas">  </div>
+     <div id="login">
+        <a href="#log"><i class="fa fa-user-circle"></i>Login</a>
+    </div>
+
+     </header>
+        <main>
+            
+            
+ <nav>
+ <ul class="menu_movil menu_drop">
+<li><a href="#menu" class="size_icon"> <i class="fa fa-bars"></i> </a>
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="page1.html">BREWING</a></li>
+ <li><a href="page2.html">MACHINES</a></li>
+ <li><a href="page3.html">GRINDERS</a></li>
+ </ul>
+
+</li>
+</ul>
+
+<ul class="menu_pc menu_drop">
+ <li class="col-3 col-s-3"><a href="index.html">HOME</a></li>
+ <li class="col-3 col-s-3"><a href="page1.html">BREWING</a></li>
+ <li class="col-3 col-s-3"><a href="page2.html">MACHINES</a></li>
+ <li class="col-3 col-s-3"><a href="page3.html">GRINDERS</a></li>
+</ul>
+ </nav>
+   </main>
+       
+        <section>
+		<h2>Register Form</h2>
+  <form onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required><br>
+
+    <label for="surnames">Surnames:</label>
+    <input type="text" id="surnames" placeholder="Enter your surnames" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter a valid email" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" placeholder="Enter your city" required><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" placeholder="Enter your country" required><br>
+
+    <label>Sex:</label>
+    <input type="radio" id="male" name="sex" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="sex" value="female" required>
+    <label for="female">Female</label><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{9}"><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter a password" required><br>
+
+    <label for="repeat-password">Repeat Password:</label>
+    <input type="password" id="repeat-password" placeholder="Repeat your password" required><br>
+
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" rows="4" cols="30" placeholder="Enter any comments"></textarea><br>
+
+    <input type="submit" value="Submit">
+  </form>
+            
+           </section>
+       
+        <footer>
+          <p>© 2023 Moss, Inc. All rights <a id="link" href="www.google.com">reserved.</a></p>
+           
+    <div>
+ 
+             <a href="http://www.facebook.com"><img id="social" src="images/socialmedia.png" alt="socialmedia"></a>
+            </div>
+
+      
+<div>  
+  <a class="fa fa-toggle-up up" href="#up"> Go Up </a>  
+</div>
+    
+</footer> 
+        
+<script>
+    function validateForm() {
+      /* Get form field values*/
+      var name = document.getElementById("name").value;
+      var surnames = document.getElementById("surnames").value;
+      var email = document.getElementById("email").value;
+      var dob = document.getElementById("dob").value;
+      var city = document.getElementById("city").value;
+      var country = document.getElementById("country").value;
+      var sex = document.querySelector('input[name="sex"]:checked');
+      var phone = document.getElementById("phone").value;
+      var password = document.getElementById("password").value;
+      var repeatPassword = document.getElementById("repeat-password").value;
+      var comments = document.getElementById("comments").value;
+
+      /* Perform validation checks*/
+      if (name == '' || surnames == '' || email == '' || dob == '' || city == '' ||
+          country == '' || !sex || phone == '' || password == '' || repeatPassword == '') {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+
+      if (password != repeatPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+  
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>    
+
+    </body>
+</html>

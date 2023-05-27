@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE espresso_data [
+    <!ELEMENT espresso_data (ratio*)>
+    <!ELEMENT ratio (amount_of_coffee, ratio_value, extraction_time)>
+    <!ELEMENT amount_of_coffee (#PCDATA)>
+    <!ELEMENT ratio_value (#PCDATA)>
+    <!ELEMENT extraction_time (#PCDATA)>
+]>
+<espresso_data>
+  <ratio>
+    <amount_of_coffee>7g</amount_of_coffee>
+    <ratio_value>1:1</ratio_value>
+    <extraction_time>20-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>7g</amount_of_coffee>
+    <ratio_value>1:2</ratio_value>
+    <extraction_time>25-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>7g</amount_of_coffee>
+    <ratio_value>1:2.5</ratio_value>
+    <extraction_time>25-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>7g</amount_of_coffee>
+    <ratio_value>1:3</ratio_value>
+    <extraction_time>30-35 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>14g</amount_of_coffee>
+    <ratio_value>1:1</ratio_value>
+    <extraction_time>20-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>14g</amount_of_coffee>
+    <ratio_value>1:2</ratio_value>
+    <extraction_time>25-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>14g</amount_of_coffee>
+    <ratio_value>1:2.5</ratio_value>
+    <extraction_time>25-30 seconds</extraction_time>
+  </ratio>
+  <ratio>
+    <amount_of_coffee>14g</amount_of_coffee>
+    <ratio_value>1:3</ratio_value>
+    <extraction_time>30-35 seconds</extraction_time>
+  </ratio>
+</espresso_data>
+
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="baristasathome" content="coffee">
+<meta name="author" content="moises romero">
+<meta name="keywords" content="coffee, extractions, coffee pots">
+     <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/page1_style.css.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>MOISES_ROMERO</title>
+</head>
+    <body>         
+     <header id="up"> 
+            <div>
+             <img id="logo" src="images/BARISTA5.png" alt="baristas">  </div>
+     <div id="login">
+        <a href="#log"><i class="fa fa-user-circle"></i>Login</a>
+    </div>
+         
+      <!--STILL WORKING IN THIS PAGE!! ADD MORE CONTENT AND IMPROVE CSS-->   
+         
+     </header>
+        <main>
+            
+            
+ <nav>
+ <ul class="menu_movil menu_drop">
+<li><a href="#menu" class="size_icon"> <i class="fa fa-bars"></i> </a>
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li><a href="page1.html">BREWING</a></li>
+ <li><a href="page2.html">MACHINES</a></li>
+ <li><a href="page3.html">GRINDERS</a></li>
+ </ul>
+
+</li>
+</ul>
+
+<ul class="menu_pc menu_drop">
+ <li class="col-3 col-s-3"><a href="index.html">HOME</a></li>
+ <li class="col-3 col-s-3"><a href="page1.html">BREWING</a></li>
+ <li class="col-3 col-s-3"><a href="page2.html">MACHINES</a></li>
+ <li class="col-3 col-s-3"><a href="page3.html">GRINDERS</a></li>
+</ul>
+ </nav>
+   </main>
+
+    <article> 
+        <h1>Understanding the brewing process</h1> 
+        <div class="brew">
+     
+        <div>    
+          <iframe src="https://www.youtube.com/embed/aTFsBqhpLes" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+        <div>
+            <iframe src="https://www.youtube.com/embed/8HAkgiBzs9s" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        </div>
+          
+  <section class="ratios">      
+        
+	<h2>Ratios and times for a perfect espresso</h2>
+      <p>This table shows the ratios and recommended times to prepare a perfect espresso using 7g and 14g of ground coffee. You can compare the extraction times and find the ideal ratio for each amount of ground coffee. Remember that the preparation of the perfect espresso depends on many factors, such as the quality of the coffee, the pressure of the machine, and the temperature of the water.</p>
+<table id="demo" border="1">
+</table>
+      
+</section>
+   </article>       
+
+        
+      
+        
+        <footer>
+          <p>© 2023 Moss, Inc. All rights <a id="link" href="www.google.com">reserved.</a></p>
+           
+    <div>
+ 
+             <a href="http://www.facebook.com"><img id="social" src="images/socialmedia.png" alt="socialmedia"></a>
+            </div>
+
+
+             <form id="log" action="user_access">
+                        <label id="user">User:</label>
+                            <input type="text" id="name" placeholder="Enter a Nickname" required>
+                        <label id="passwd">Password:</label>
+                            <input type="password" id="password" placeholder="Enter a password" required>
+                                <button type="submit" onclick="Log()">Login</button>
+                    </form> 
+      <a id="account" href="login_page.html">Don´t you have an account yet? </a>
+<div>  
+  <a class="fa fa-toggle-up up" href="#up"> Go Up </a>  
+</div>
+    
+</footer> 
+        
+    <script>
+        function Log() {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var pass = document.getElementById("password").value;
+    
+    if (name =="" || pass =="") { 
+      window.alert("Please fill in all required fields.");
+        
+    }else {
+    window.alert("Wellcome back " + name +"!!");
+    }
+    }
+        
+//script for the xml data
+        
+   var xmlhttp = new XMLHttpRequest(); 
+
+  xmlhttp.onreadystatechange = function() { 
+
+    if (this.readyState == 4 && this.status == 200) { 
+
+      myFunction(this); 
+
+    } 
+
+  }; 
+
+ 
+
+// Abrimos el archivo que está alojado en el servidor cd_catalog.xml 
+
+  xmlhttp.open("GET", "ratiosTable.xml" , true); 
+
+  xmlhttp.send(); 
+
+ 
+
+function myFunction(xml) { 
+
+  var x, i, xmlDoc, table; 
+
+// Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor 
+
+  xmlDoc = xml.responseXML; 
+
+ 
+
+  table = "<tr><th>Amount of ground coffee</th><th>Ratio</th><th>Extraction time</th></tr>"; 
+
+ 
+
+// Obtenemos todos los nodos denominados CD del archivo xml 
+
+  x = xmlDoc.getElementsByTagName("ratio"); 
+
+ 
+
+// Hacemos un bucle recorriendo todos los elementos CD 
+
+  for (i = 0; i < x.length; i++) {  
+
+ 
+
+// Del elemento X, obtenemos del primer elemento denominado "artist" 
+
+    table += "<tr><td>" +  
+
+    x[i].getElementsByTagName("Amount of ground coffee")[0].childNodes[0].nodeValue + 
+
+    "</td><td>" + 
+
+    x[i].getElementsByTagName("Ratio")[0].childNodes[0].nodeValue +
+        
+    "</td><td>" + 
+
+    x[i].getElementsByTagName("Extraction time")[0].childNodes[0].nodeValue + 
+
+    "</td></tr>"; 
+
+  } 
+
+  document.getElementById("demo").innerHTML = table; 
+
+}        
+        
+        </script>
+
+    </body>
+</html>

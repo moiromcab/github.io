@@ -1,0 +1,23 @@
+section{
+background: none;
+font-size: 3vw;
+margin: 5%;
+}
+h2{
+text-align:center;
+margin-bottom: 5%;
+font-weight: bold;
+font-size: 5rem;
+}
+#male,#female,{
+    height: 2rem;
+    width: 2rem;
+}
+#comments{width: 100%;}
+label,input,textarea{
+font-size: 3rem;
+font-weight: bold;
+}
+#login{
+display: none;
+}
