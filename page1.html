@@ -13,20 +13,20 @@
 
     <title>MOISES_ROMERO</title>
 </head>
-    <body>         
-     <header id="up"> 
+    <body>
+     <header id="up">
             <div>
              <img id="logo" src="images/BARISTA5.png" alt="baristas">  </div>
      <div id="login">
         <a href="#log"><i class="fa fa-user-circle"></i>Login</a>
     </div>
-         
-      <!--STILL WORKING IN THIS PAGE!! ADD MORE CONTENT AND IMPROVE CSS-->   
-         
+
+      <!--STILL WORKING IN THIS PAGE!! ADD MORE CONTENT AND IMPROVE CSS-->
+
      </header>
         <main>
-            
-            
+
+
  <nav>
  <ul class="menu_movil menu_drop">
 <li><a href="#menu" class="size_icon"> <i class="fa fa-bars"></i> </a>
@@ -49,36 +49,37 @@
  </nav>
    </main>
 
-    <article> 
-        <h1>Understanding the brewing process</h1> 
+    <article>
+        <h1>Understanding the brewing process</h1>
         <div class="brew">
-     
-        <div>    
+
+        <div>
           <iframe src="https://www.youtube.com/embed/aTFsBqhpLes" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
         <div>
             <iframe src="https://www.youtube.com/embed/8HAkgiBzs9s" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         </div>
-          
-  <section class="ratios">      
-        
+
+  <section class="ratios">
+
 	<h2>Ratios and times for a perfect espresso</h2>
       <p>This table shows the ratios and recommended times to prepare a perfect espresso using 7g and 14g of ground coffee. You can compare the extraction times and find the ideal ratio for each amount of ground coffee. Remember that the preparation of the perfect espresso depends on many factors, such as the quality of the coffee, the pressure of the machine, and the temperature of the water.</p>
+
 <table id="demo" border="1">
 </table>
-      
-</section>
-   </article>       
 
-        
-      
-        
+</section>
+   </article>
+
+
+
+
         <footer>
           <p>© 2023 Moss, Inc. All rights <a id="link" href="www.google.com">reserved.</a></p>
-           
+
     <div>
- 
+
              <a href="http://www.facebook.com"><img id="social" src="images/socialmedia.png" alt="socialmedia"></a>
             </div>
 
@@ -89,101 +90,102 @@
                         <label id="passwd">Password:</label>
                             <input type="password" id="password" placeholder="Enter a password" required>
                                 <button type="submit" onclick="Log()">Login</button>
-                    </form> 
+                    </form>
       <a id="account" href="login_page.html">Don´t you have an account yet? </a>
-<div>  
-  <a class="fa fa-toggle-up up" href="#up"> Go Up </a>  
+<div>
+  <a class="fa fa-toggle-up up" href="#up"> Go Up </a>
 </div>
-    
-</footer> 
-        
+
+</footer>
+
     <script>
         function Log() {
     event.preventDefault();
     var name = document.getElementById("name").value;
     var pass = document.getElementById("password").value;
-    
-    if (name =="" || pass =="") { 
+
+    if (name =="" || pass =="") {
       window.alert("Please fill in all required fields.");
-        
+
     }else {
     window.alert("Wellcome back " + name +"!!");
     }
     }
-        
+
 //script for the xml data
-        
-   var xmlhttp = new XMLHttpRequest(); 
 
-  xmlhttp.onreadystatechange = function() { 
+   var xmlhttp = new XMLHttpRequest();
 
-    if (this.readyState == 4 && this.status == 200) { 
+  xmlhttp.onreadystatechange = function() {
 
-      myFunction(this); 
+    if (this.readyState == 4 && this.status == 200) {
 
-    } 
+      myFunction(this);
 
-  }; 
+    }
 
- 
+  };
 
-// Abrimos el archivo que está alojado en el servidor cd_catalog.xml 
 
-  xmlhttp.open("GET", "ratiosTable.xml" , true); 
 
-  xmlhttp.send(); 
+// Abrimos el archivo que está alojado en el servidor cd_catalog.xml
 
- 
+  xmlhttp.open("GET", "ratiosTable.xml" , true);
 
-function myFunction(xml) { 
+  xmlhttp.send();
 
-  var x, i, xmlDoc, table; 
 
-// Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor 
 
-  xmlDoc = xml.responseXML; 
+function myFunction(xml) {
 
- 
+  var x, i, xmlDoc, table;
 
-  table = "<tr><th>Amount of ground coffee</th><th>Ratio</th><th>Extraction time</th></tr>"; 
+// Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor
 
- 
+  xmlDoc = xml.responseXML;
 
-// Obtenemos todos los nodos denominados CD del archivo xml 
 
-  x = xmlDoc.getElementsByTagName("ratio"); 
 
- 
+  table = "<tr><th>Amount of ground coffee</th><th>Ratio</th><th>Extraction time</th></tr>";
 
-// Hacemos un bucle recorriendo todos los elementos CD 
 
-  for (i = 0; i < x.length; i++) {  
 
- 
+// Obtenemos todos los nodos denominados CD del archivo xml
 
-// Del elemento X, obtenemos del primer elemento denominado "artist" 
+  x = xmlDoc.getElementsByTagName("ratio");
 
-    table += "<tr><td>" +  
 
-    x[i].getElementsByTagName("Amount of ground coffee")[0].childNodes[0].nodeValue + 
 
-    "</td><td>" + 
+// Hacemos un bucle recorriendo todos los elementos CD
 
-    x[i].getElementsByTagName("Ratio")[0].childNodes[0].nodeValue +
-        
-    "</td><td>" + 
+  for (i = 0; i < x.length; i++) {
 
-    x[i].getElementsByTagName("Extraction time")[0].childNodes[0].nodeValue + 
 
-    "</td></tr>"; 
 
-  } 
+// Del elemento X, obtenemos del primer elemento denominado "artist"
 
-  document.getElementById("demo").innerHTML = table; 
+    table += "<tr><td>" +
 
-}        
-        
+    x[i].getElementsByTagName("amount_of_coffee")[0].childNodes[0].nodeValue +
+
+    "</td><td>" +
+
+    x[i].getElementsByTagName("ratio_value")[0].childNodes[0].nodeValue +
+
+    "</td><td>" +
+
+    x[i].getElementsByTagName("extraction_time")[0].childNodes[0].nodeValue +
+
+    "</td></tr>";
+
+  }
+
+  document.getElementById("demo").innerHTML = table;
+
+}
+
         </script>
 
     </body>
 </html>
+
