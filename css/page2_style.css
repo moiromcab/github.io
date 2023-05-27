@@ -1,0 +1,16 @@
+article{display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+margin:2%;
+justify-content: center;}
+
+
+h1,h2,h4{
+    text-align: center;
+    font-weight: bold;}
+
+
+p{text-align: justify;
+    margin:1%;}
+
